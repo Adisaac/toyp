@@ -26,25 +26,47 @@ header {
     margin-left: 20px;
 }
 
+/* Mobile Menu Toggle Button */
+.menu-toggle {
+    display: none;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+/* Default Navigation */
 nav ul {
     list-style: none;
     display: flex;
     margin-right: 20px;
 }
 
-nav ul li {
-    margin: 0 15px;
-}
+/* Hide Menu on Mobile */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
 
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s ease;
-}
+    nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: rgba(0, 0, 0, 0.9);
+        width: 200px;
+        padding: 10px;
+    }
 
-nav ul li a:hover {
-    color: #ffcc00;
+    nav ul li {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    nav ul.show {
+        display: flex;
+    }
 }
 
 /* Hero Section */
