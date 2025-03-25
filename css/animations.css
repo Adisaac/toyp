@@ -1,0 +1,96 @@
+/* Animations.css - Handles animations and hover effects */
+
+/* Smooth Fade-in Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Hover Effects for Links */
+nav ul li a {
+    position: relative;
+    display: inline-block;
+    transition: color 0.3s ease;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, #ffcc00, #ff5722);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease-in-out;
+}
+
+nav ul li a:hover {
+    color: #ffcc00;
+}
+
+nav ul li a:hover::after {
+    transform: scaleX(1);
+}
+
+
+/* Image Zoom on Hover */
+.gallery-container img:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Testimonial Card Animation */
+.testimonial {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Footer Social Media Icon Hover */
+.social-media a img {
+    transition: transform 0.5s ease;
+}
+
+.social-media a:hover img {
+    transform: rotate(360deg);
+}
+
+
+/* Button Hover Effects */
+.btn:hover, .btn-secondary:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+
+/* Glowing Effect for Buttons */
+@keyframes glow {
+    0% { box-shadow: 0 0 5px #ff5722; }
+    50% { box-shadow: 0 0 20px #ff5722; }
+    100% { box-shadow: 0 0 5px #ff5722; }
+}
+
+.btn:hover {
+    animation: glow 0.8s ease-in-out infinite alternate;
+}
+
+
+/* Social Media Icons Hover Effect */
+.social-media img:hover {
+    transform: rotate(360deg);
+    transition: transform 0.5s ease;
+}
